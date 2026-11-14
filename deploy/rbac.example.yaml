@@ -1,0 +1,39 @@
+# 替换命名空间后由管理员投递；这是只读采集权限，不授予 CR patch、exec 或 Secret 读取。
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: deployment-ops-agent
+  namespace: agent-system
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: deployment-ops-observer
+  namespace: agent-demo
+rules:
+  - apiGroups: ["platform.lanhao.io"]
+    resources: ["projectpostgreses", "projectruntimes", "platformreleases", "servicepublishes"]
+    verbs: ["get", "list"]
+  - apiGroups: [""]
+    resources: ["pods", "pods/log", "events"]
+    verbs: ["get", "list"]
+  - apiGroups: ["apps"]
+    resources: ["deployments", "replicasets", "statefulsets"]
+    verbs: ["get", "list"]
+  - apiGroups: ["batch"]
+    resources: ["jobs"]
+    verbs: ["get", "list"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: deployment-ops-observer
+  namespace: agent-demo
+subjects:
+  - kind: ServiceAccount
+    name: deployment-ops-agent
+    namespace: agent-system
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: deployment-ops-observer

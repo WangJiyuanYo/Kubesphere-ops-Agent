@@ -1,0 +1,12 @@
+agent:
+  mode: KUBERNETES
+  auto-retry: false
+  ops:
+    strict-platform-contract: true
+    workers: 4
+    verification-profiles:
+      tenant-app:
+        url: https://app.example.com/actuator/deployment-health
+    notification:
+      enabled: false
+      # 通过环境变量 AGENT_NOTIFICATION_URL / AGENT_NOTIFICATION_SECRET 注入。

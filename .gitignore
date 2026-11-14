@@ -1,0 +1,10 @@
+target/
+.idea/
+*.iml
+.env
+*.log
+tmp/
+secrets/
+data/
+runtime/
+node_modules/

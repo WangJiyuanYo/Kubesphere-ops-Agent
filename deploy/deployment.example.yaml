@@ -1,0 +1,115 @@
+# agent-system 命名空间、数据库、平台服务凭据和 API 密码由环境管理员预先创建。
+# deployment-ops-agent-credentials 须包含 AGENT_SETTINGS_KEY（Base64 编码的 32 字节主密钥）；
+# 数据库和该密钥应配套备份。记忆 SQLite 位于 /app/data，须使用持久盘；当前示例为单实例。
+# 首次部署前核对 StorageClass，数据卷内容与 PostgreSQL 一并备份。不要依赖容器临时目录保存主密钥。
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: deployment-ops-agent-data
+  namespace: agent-system
+spec:
+  accessModes: [ReadWriteOnce]
+  resources:
+    requests:
+      storage: 1Gi
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: deployment-ops-agent-config
+  namespace: agent-system
+data:
+  application-production.yml: |
+    agent:
+      ops:
+        strict-platform-contract: true
+        verification-profiles:
+          tenant-app:
+            url: https://app.example.com/actuator/deployment-health
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-ops-agent
+  namespace: agent-system
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: deployment-ops-agent
+  template:
+    metadata:
+      labels:
+        app: deployment-ops-agent
+    spec:
+      serviceAccountName: deployment-ops-agent
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 10001
+        fsGroup: 10001
+      containers:
+        - name: agent
+          image: deployment-ops-agent:0.1.0
+          args:
+            - --spring.config.additional-location=file:/etc/agent/application-production.yml
+          volumeMounts:
+            - name: agent-data
+              mountPath: /app/data
+            - name: agent-config
+              mountPath: /etc/agent
+              readOnly: true
+          ports:
+            - containerPort: 8098
+          env:
+            - name: SERVER_ADDRESS
+              value: "0.0.0.0"
+            - name: AGENT_MODE
+              value: KUBERNETES
+            - name: AGENT_NAMESPACES
+              value: agent-demo
+            - name: AGENT_AUTO_RETRY
+              value: "false"
+            - name: AGENT_AI_ENABLED
+              value: "false"
+            - name: AI_CHAT_PROVIDER
+              value: none
+          envFrom:
+            - secretRef:
+                name: deployment-ops-agent-credentials
+          readinessProbe:
+            httpGet:
+              path: /actuator/health
+              port: 8098
+            initialDelaySeconds: 15
+          resources:
+            requests:
+              cpu: 250m
+              memory: 512Mi
+            limits:
+              cpu: "1"
+              memory: 1Gi
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop: ["ALL"]
+      volumes:
+        - name: agent-data
+          persistentVolumeClaim:
+            claimName: deployment-ops-agent-data
+        - name: agent-config
+          configMap:
+            name: deployment-ops-agent-config
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: deployment-ops-agent
+  namespace: agent-system
+spec:
+  selector:
+    app: deployment-ops-agent
+  ports:
+    - port: 8098
+      targetPort: 8098

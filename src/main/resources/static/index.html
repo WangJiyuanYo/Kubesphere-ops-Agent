@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>部署运维 Agent</title><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/app.css">
+  <script src="/vendor/marked.umd.js" defer></script>
+  <script src="/vendor/purify.min.js" defer></script>
+  <script src="/markdown.js" defer></script>
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <section id="login-panel" class="login-wrap">
+    <form id="login-form" class="login-card">
+      <div class="brand-mark large">A<span></span></div><p class="eyebrow">DEPLOYMENT OPS</p>
+      <h1>部署运维 Agent</h1><p class="muted">连接集群，理解故障，让部署有迹可循。</p>
+      <label>运维账号<input name="username" autocomplete="username" value="operator" required maxlength="100"></label>
+      <label>密码<input name="password" type="password" autocomplete="current-password" placeholder="输入运维密码" required maxlength="200"></label>
+      <p id="login-error" class="form-error" role="alert"></p><button class="primary full" type="submit">进入工作台 <span>→</span></button>
+      <p class="small muted">使用服务端配置的运维账号登录。凭据仅保留在当前页面内存中。</p>
+    </form>
+  </section>
+
+  <div id="app" class="app-shell" hidden>
+    <aside class="sidebar">
+      <div class="brand"><div class="brand-mark">A<span></span></div><div><strong>部署运维 Agent</strong><small>DEPLOYMENT OPS</small></div></div>
+      <p class="nav-caption">工作空间</p>
+      <nav aria-label="主导航">
+        <button class="nav-item active" data-page="chat"><span class="nav-icon">◈</span>Agent 对话</button>
+        <button class="nav-item" data-page="connections"><span class="nav-icon">▦</span>KubeSphere 连接</button>
+        <button class="nav-item" data-page="llm"><span class="nav-icon">✧</span>LLM 设置</button>
+        <button class="nav-item" data-page="runs"><span class="nav-icon">≡</span>部署任务</button>
+        <button class="nav-item" data-page="watches"><span class="nav-icon">◎</span>站点开通</button>
+        <button class="nav-item" data-page="memories"><span class="nav-icon">▤</span>排障记忆</button>
+      </nav>
+      <div class="sidebar-bottom"><div class="runtime-note"><span class="status-dot"></span><span id="runtime-mode">Agent 已就绪</span></div>
+        <div class="account"><div class="avatar">OP</div><div><strong id="account-name">operator</strong><small>运维工作空间</small></div><button id="logout" class="icon-button" title="退出登录" aria-label="退出登录">↗</button></div>
+      </div>
+    </aside>
+    <main>
+      <header class="topbar"><span>工作空间 <span class="separator">/</span> <strong id="breadcrumb">Agent 对话</strong></span><span class="badge neutral">Spring AI Alibaba</span><button id="mobile-logout" class="text-button mobile-only">退出登录</button></header>
+      <div class="main-content">
+        <section class="page-heading"><div><p class="eyebrow">YOUR DEPLOYMENT COPILOT</p><h1 id="page-title">和 Agent 一起排查部署问题</h1><p id="page-description" class="muted">关联任务与集群，把故障现象整理成可验证的排查步骤。</p></div><span id="model-badge" class="badge"><span class="status-dot"></span>规则助手</span></section>
+
+        <section id="page-watches" class="page" hidden>
+          <div class="section-toolbar"><div><h2>开通全程监控</h2><p id="watch-status" class="small muted"></p></div><div><button id="refresh-watches" class="button">刷新</button><button id="sync-watches" class="button">同步阶段</button></div></div>
+          <p class="discovery-note">从开通受理开始记录平台阶段；观察降级与部署失败分别显示。只有明确启用的托管范围会自动调查。平台显示成功后，恢复流程仍须独立完成应用验收。</p>
+          <div class="card table-wrap"><table><thead><tr><th>站点 / 发布</th><th>阶段与异常</th><th>目标 / 托管</th><th>操作</th></tr></thead><tbody id="watch-list"></tbody></table><p id="watch-empty" class="empty-state">尚无站点阶段记录。请接入平台阶段协议；原部署发现和手动调查仍可使用。</p></div>
+          <div class="discovery-pagination"><span></span><div><button id="watch-previous" class="button">上一页</button><button id="watch-next" class="button">下一页</button></div></div>
+          <div class="section-toolbar"><div><h2>托管策略</h2><p class="small muted">策略绑定明确站点或项目、连接与命名空间。暂停后停止新的自动调查与恢复，已受理动作继续核对结果。</p></div><button id="new-policy" class="primary">新建策略</button></div>
+          <div id="policy-list" class="discovery-sources"></div>
+          <div class="section-toolbar"><h2>恢复效果</h2></div><div id="learning-outcomes" class="card"></div>
+        </section>
+        <section id="page-chat" class="page">
+          <div class="chat-layout">
+            <article class="card conversation">
+              <div class="card-toolbar"><div class="toolbar-title"><span class="agent-orb">✧</span><strong>Agent 对话</strong></div><div class="toolbar-actions"><select id="session-select" aria-label="历史对话"><option value="">新对话</option></select><button id="refresh-chat" class="icon-button" title="刷新对话" aria-label="刷新对话">↻</button><button id="new-chat" class="button small-button">＋ 新对话</button></div></div>
+              <div id="messages" class="messages" aria-live="polite">
+                <div id="chat-welcome" class="welcome"><div class="welcome-symbol">✧</div><h2>从一个部署问题开始</h2><p>描述你看到的现象，或在右侧选择一个部署任务。<br>我会结合已有证据，帮你梳理可能原因与下一步检查。</p>
+                  <div class="suggestions"><button data-prompt="部署一直处于 Pending，应该先检查什么？">部署一直 Pending，怎么排查？ <span>↗</span></button><button data-prompt="请根据关联任务的最新证据，整理根因假设和排查顺序。">帮我分析当前部署任务 <span>↗</span></button><button data-prompt="怎样判断一次部署恢复已经真正成功？">如何验证部署恢复成功？ <span>↗</span></button></div>
+                </div>
+              </div>
+              <form id="chat-form" class="composer"><label class="sr-only" for="chat-input">给 Agent 的消息</label><textarea id="chat-input" placeholder="描述问题，例如：镜像拉取超时，重试后仍未就绪…" rows="3" maxlength="4000" required></textarea><div class="composer-footer"><label class="checkbox"><input id="include-cluster" type="checkbox">自动只读排查</label><span class="key-hint">Enter 发送 · Shift + Enter 换行</span><button id="send-message" class="primary" type="submit">发送 <span>↑</span></button></div><p id="chat-error" class="form-error" role="alert"></p></form>
+            </article>
+            <aside class="context-column">
+              <article class="card context-card"><p class="eyebrow">CONTEXT</p><h2>对话上下文</h2><p class="muted small">选择本次分析的环境和任务。</p>
+                <label>KubeSphere 连接<select id="chat-connection"><option value="">不关联集群</option></select></label>
+                <p id="chat-connection-note" class="small muted" aria-live="polite">Agent 可查看已保存的连接目录。选择连接后默认执行本轮只读排查，采集容器状态、事件和日志。</p>
+                <label>部署任务<select id="chat-run"><option value="">不关联任务</option></select></label>
+                <p id="chat-discovery-note" class="small muted" hidden></p>
+                <p id="context-note" class="small muted">发送首条消息后将固定本次对话的上下文。</p>
+                <button id="go-connections" class="text-button">管理集群连接 →</button>
+              </article>
+              <article class="context-info"><span class="info-symbol">↳</span><h3>先看证据，再做判断</h3><p>Agent 可以分析任务记录与只读集群快照。部署恢复仍由有预算、有验证的受控流程完成。</p><div class="mini-rule"></div><span id="context-model" class="small">尚未启用 LLM</span><button id="go-llm" class="text-button">配置模型 →</button></article>
+            </aside>
+          </div>
+        </section>
+
+        <section id="page-memories" class="page" hidden>
+          <div class="section-toolbar"><span id="memory-storage" class="muted">排障记忆</span><button id="add-memory" class="primary">＋ 记录排障思路</button></div>
+          <form id="memory-search-form" class="card memory-search"><input id="memory-search" aria-label="搜索排障记忆" placeholder="搜索中文问题、错误码或解决方法，例如：镜像拉取、ImagePullBackOff" maxlength="500"><select id="memory-filter" aria-label="记忆状态"><option value="">有效记忆</option><option value="VERIFIED">已验证</option><option value="DRAFT">待确认</option><option value="ARCHIVED">已归档</option></select><button class="button" type="submit">搜索</button></form>
+          <p class="memory-help muted small">关联目标的对话、部署诊断和未成功任务会自动复盘为待确认经验。填写实际验证依据并确认后，Agent 才会在同一来源范围的后续排查中参考；模拟经验不会自动进入真实集群调查。</p>
+          <p id="memory-error" class="form-error" role="alert"></p><div id="memory-list" class="memory-grid"></div>
+          <div id="memory-empty" class="card empty-state" hidden><h2>还没有匹配的排障记忆</h2><p>记录一个已解决的问题，或在 Agent 回复下点击“记为排障思路”。<br>验证成功的自动恢复任务也会归档到这里。</p></div>
+        </section>
+
+        <section id="page-connections" class="page" hidden>
+          <div class="section-toolbar"><span id="connection-count" class="muted">0 个连接</span><button id="add-connection" class="primary">＋ 添加连接</button></div>
+          <div id="connection-list" class="connection-grid"></div>
+          <div id="connection-empty" class="card empty-state"><div class="welcome-symbol">▦</div><h2>连接你的 KubeSphere</h2><p>保存 API 网关、命名空间和访问凭据，<br>在对话中读取目标环境的 Pod 状态。</p><button id="first-connection" class="primary">添加第一个连接</button></div>
+        </section>
+
+        <section id="page-llm" class="page" hidden>
+          <div class="settings-layout"><form id="llm-form" class="card settings-card">
+            <div class="settings-heading"><div><h2>模型连接</h2><p class="muted small">保存后，对话和故障诊断使用这份配置。</p></div><label class="switch-label"><input id="llm-enabled" type="checkbox" role="switch">启用 LLM</label></div>
+            <div class="form-grid"><label>服务协议<select id="llm-provider"><option value="DASHSCOPE">DashScope · 阿里云百炼</option><option value="OPENAI_COMPATIBLE">OpenAI 兼容协议</option></select></label><div class="model-field"><label for="llm-model">模型名称</label><div class="model-input-row"><input id="llm-model" placeholder="填写或从列表选择" required maxlength="100"><button id="llm-fetch-models" class="button" type="button">获取模型</button></div></div></div>
+            <div id="llm-model-picker" class="model-picker" hidden><label for="llm-model-list">选择模型</label><select id="llm-model-list"><option value="">请选择模型</option></select></div><p id="llm-model-list-status" class="field-help" role="status" aria-live="polite"></p><p id="llm-model-list-error" class="form-error" role="alert"></p>
+            <label>Base URL<input id="llm-url" type="url" placeholder="https://dashscope.aliyuncs.com" required maxlength="500"></label><p id="protocol-help" class="field-help">DashScope 填写服务根地址，无需追加 API 路径。</p>
+            <label>API Key<input id="llm-key" type="password" autocomplete="new-password" placeholder="输入 API Key" maxlength="4096"></label><div class="secret-row"><span id="llm-key-state" class="small muted">尚未配置密钥</span><label class="checkbox"><input id="llm-clear-key" type="checkbox">清除已保存密钥</label></div>
+            <div class="form-grid"><label>Temperature<input id="llm-temperature" type="number" min="0" max="2" step="0.1" value="0.1" required></label><label>最大输出 Token<input id="llm-tokens" type="number" min="128" max="4096" step="1" value="1500" required></label></div>
+            <p id="llm-error" class="form-error" role="alert"></p><div class="form-actions"><button id="llm-test" class="button" type="button" disabled>测试连接</button><button id="llm-save" class="primary" type="submit">保存配置</button></div>
+          </form><aside class="card guide-card"><span class="guide-icon">✧</span><h2>让模型参与分析</h2><p>支持阿里云百炼，也可接入提供 OpenAI 兼容接口的模型服务。</p><ol><li>填写服务地址与模型名称。</li><li>保存 API Key，并测试连接。</li><li>启用 LLM，开始对话或诊断。</li></ol><div class="callout">密钥不会回显。保留密钥时留空；更换服务地址或协议时，需重新输入密钥。</div><p class="small muted">未启用模型时，Agent 使用规则手册。模型不可用时，自动诊断会回退到手册。</p></aside></div>
+        </section>
+
+        <section id="page-runs" class="page" hidden>
+          <article class="card readiness-panel"><div class="card-toolbar"><strong>接入状态</strong><button id="refresh-readiness" class="text-button" type="button">刷新状态</button></div><p id="readiness-note" class="small muted">正在读取配置与最近观测…</p><div id="readiness-checks"></div></article>
+          <div class="section-toolbar"><div><h2>平台站点部署</h2><p class="small muted">从租户平台发现开通任务，包含尚未创建集群资源的阶段。</p></div><button id="sync-platform-catalog" class="button">同步平台目录</button></div>
+          <p id="platform-catalog-status" class="small muted" role="status"></p>
+          <div class="card table-wrap"><table><thead><tr><th>站点 / 平台任务</th><th>开通阶段</th><th>项目 / 集群</th><th>操作</th></tr></thead><tbody id="platform-catalog-list"></tbody></table></div>
+          <div class="discovery-pagination"><span class="small muted">目录同步不会调用模型或执行恢复。</span><div><button id="platform-previous" class="button">上一页</button><button id="platform-next" class="button">下一页</button></div></div>
+          <div class="section-toolbar"><div><h2>集群部署发现</h2><p class="small muted">自动同步 Operator 部署，选择后再交给 Agent 排查。</p></div><button id="refresh-runs" class="button">↻ 刷新</button></div>
+          <p class="discovery-note">为连接启用发现后，每 30 秒读取其命名空间中的应用部署。首次同步收录当前清单；发现和同步不会调用模型。点击“交给 Agent”生成只读排查方案，不执行重试或修改集群。</p>
+          <div id="discovery-sources" class="discovery-sources"></div><p id="discovery-no-connections" class="small muted" hidden>请先在 KubeSphere 连接中添加连接，并设置需要监控的命名空间。</p>
+          <div class="discovery-filters"><label>来源连接<select id="discovery-connection"><option value="">全部连接</option></select></label><label>Agent 处理状态<select id="discovery-state"><option value="">全部状态</option><option value="PENDING">待接管</option><option value="QUEUED">已排队</option><option value="RUNNING">排查中</option><option value="DONE">已有方案</option><option value="FAILED">排查失败</option><option value="IGNORED">已忽略</option></select></label></div>
+          <p id="discovery-error" class="form-error" role="alert"></p>
+          <div class="card table-wrap"><table><thead><tr><th>部署资源 / 来源</th><th>集群部署状态</th><th>Agent 处理状态</th><th>首次发现</th><th>操作</th></tr></thead><tbody id="discovery-list"></tbody></table><div id="discovery-empty" class="empty-state"><h2>暂无发现的部署</h2><p>启用连接的部署发现，或调整筛选条件。<br>若同步失败，请检查命名空间、四类 Operator CRD 和读取权限。</p></div></div>
+          <div class="discovery-pagination"><span id="discovery-count" class="small muted"></span><div><button id="discovery-previous" class="button">上一页</button><button id="discovery-next" class="button">下一页</button></div></div>
+          <div class="section-toolbar"><div><h2>已接入恢复流程</h2><p class="small muted">最近 30 个平台注册或演示任务，使用服务端配置的恢复身份。</p></div><button id="start-demo" class="primary" hidden>运行演示任务</button></div>
+          <div class="card table-wrap"><table><thead><tr><th>任务</th><th>状态</th><th>恢复次数</th><th>创建时间</th><th>操作</th></tr></thead><tbody id="run-list"></tbody></table><div id="run-empty" class="empty-state"><h2>暂无部署任务</h2><p>从平台接入部署事件，或注册已有部署资源。<br>演示模式也可以创建模拟任务体验完整流程。</p></div></div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <dialog id="memory-dialog"><form id="memory-form" class="dialog-form"><div class="dialog-heading"><div><p class="eyebrow">AGENT MEMORY</p><h2 id="memory-dialog-title">记录排障思路</h2></div><button id="close-memory" class="icon-button" type="button" aria-label="关闭记忆">×</button></div>
+    <p id="memory-origin" class="small muted"></p><label>标题<input id="memory-title" required maxlength="120" placeholder="例如：镜像仓库暂时超时的排查"></label>
+    <label>问题现象<textarea id="memory-problem" rows="3" required maxlength="4000" placeholder="发生了什么，出现什么错误？"></textarea></label>
+    <label>原因分析<textarea id="memory-cause" rows="2" maxlength="4000" placeholder="已确认原因，或尚待验证的假设"></textarea></label>
+    <label>解决思路与操作步骤<textarea id="memory-solution" rows="5" required maxlength="4000" placeholder="记录排查顺序、采取的措施和适用前提"></textarea></label>
+    <label>验证依据<textarea id="memory-verification" rows="3" maxlength="4000" placeholder="如何确认解决？标记已验证时必填"></textarea></label>
+    <div class="form-grid"><label>标签<input id="memory-tags" maxlength="300" placeholder="镜像、网络、数据库…"></label><label>记忆状态<select id="memory-status"><option value="DRAFT">待确认 · 仅记录思路</option><option value="VERIFIED">已验证 · 参与后续诊断</option><option value="ARCHIVED">已归档 · 停止参考</option></select></label></div>
+    <p id="memory-form-error" class="form-error" role="alert"></p><div class="form-actions"><button id="cancel-memory" class="button" type="button">取消</button><button id="save-memory" class="primary" type="submit">保存记忆</button></div>
+  </form></dialog>
+  <dialog id="connection-dialog"><form id="connection-form" class="dialog-form"><div class="dialog-heading"><div><p class="eyebrow">KUBESPHERE</p><h2 id="connection-dialog-title">添加连接</h2></div><button id="close-connection" class="icon-button" type="button" aria-label="关闭">×</button></div>
+    <label>连接名称<input id="connection-name" placeholder="例如：开发环境" required maxlength="80"></label><label>API 网关地址<input id="connection-api" type="url" placeholder="https://ks-api.example.com" required maxlength="500"></label><p class="field-help">填写可代理 Kubernetes API 的网关根地址，测试将读取目标命名空间的 Pod 列表。</p>
+    <div class="form-grid"><label>控制台链接（可选）<input id="connection-console" type="url" placeholder="https://ks.example.com" maxlength="500"></label><label>命名空间<input id="connection-namespace" placeholder="default" required maxlength="63" pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?"></label></div>
+    <label>访问 Token<input id="connection-token" type="password" autocomplete="new-password" placeholder="输入只读访问 Token" maxlength="8192"></label><div class="secret-row"><span id="connection-token-state" class="small muted">未配置 Token</span><label class="checkbox"><input id="connection-clear-token" type="checkbox">清除已保存 Token</label></div>
+    <label>CA 证书（可选）<textarea id="connection-ca" rows="4" maxlength="32768" placeholder="粘贴 PEM 格式 CA 证书，用于集群自签名证书；不要填写私钥"></textarea></label><div class="secret-row"><span id="connection-ca-state" class="small muted">使用系统默认信任证书</span><label class="checkbox"><input id="connection-clear-ca" type="checkbox">清除已保存 CA</label></div><p class="field-help">始终校验证书链和主机名。证书留空保留，更换 API 地址时需重新输入或清除原证书。</p>
+    <p id="connection-error" class="form-error" role="alert"></p><div class="form-actions"><button id="cancel-connection" class="button" type="button">取消</button><button class="primary" type="submit">保存连接</button></div>
+  </form></dialog>
+  <dialog id="run-dialog"><div class="dialog-form"><div class="dialog-heading"><h2>任务详情</h2><button id="close-run" class="icon-button" aria-label="关闭">×</button></div><div id="run-actions" class="form-actions"></div><pre id="run-detail"></pre></div></dialog>
+  <dialog id="discovery-dialog"><div class="dialog-form"><div class="dialog-heading"><h2>部署与排查方案</h2><button id="close-discovery" class="icon-button" aria-label="关闭部署方案">×</button></div><div id="discovery-detail"></div></div></dialog>
+  <dialog id="watch-dialog"><div class="dialog-form"><div class="dialog-heading"><h2>站点开通详情</h2><button id="close-watch" class="icon-button" aria-label="关闭站点详情">×</button></div><div id="watch-detail"></div></div></dialog>
+  <dialog id="policy-dialog"><form id="policy-form" class="dialog-form"><div class="dialog-heading"><h2>站点托管策略</h2><button id="close-policy" class="icon-button" type="button" aria-label="关闭策略">×</button></div>
+    <label>授权工作空间 ID<input id="policy-workspace" required maxlength="80"></label><div class="form-grid"><label>站点 ID<input id="policy-site" maxlength="19" pattern="[1-9][0-9]{0,18}"></label><label>项目 ID<input id="policy-project" maxlength="80"></label></div><p class="field-help">至少填写一个明确站点或项目；两者都填时须同时匹配。</p>
+    <label>只读连接<select id="policy-connection" required></select></label><label>已纳管命名空间<input id="policy-namespace" required maxlength="63" pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?"></label>
+    <label>自动化等级<select id="policy-level"><option value="OBSERVE">仅观察</option><option value="DIAGNOSE">自动排查</option><option value="APPROVAL">排查后人工批准恢复</option><option value="AUTO_LOW_RISK">授权低风险自动恢复</option></select></label><p class="field-help">低风险自动恢复须先完成受控恢复验收并由服务端启用；更改等级会停止原版本下尚未执行的恢复。</p>
+    <div class="form-grid"><label>阶段停滞阈值（秒）<input id="policy-stall" type="number" min="60" max="86400" value="600" required></label><label>开通总时限（秒）<input id="policy-total" type="number" min="600" max="604800" value="3600" required></label></div>
+    <div class="form-grid"><label>每次发布最多自动调查<input id="policy-budget" type="number" min="1" max="3" value="2" required></label><label>调查冷却时间（秒）<input id="policy-cooldown" type="number" min="30" max="86400" value="60" required></label></div><label class="checkbox"><input id="policy-enabled" type="checkbox">启用此范围的托管策略</label><p id="policy-error" class="form-error" role="alert"></p><button class="primary" type="submit">保存策略</button>
+  </form></dialog>
+  <div id="toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>

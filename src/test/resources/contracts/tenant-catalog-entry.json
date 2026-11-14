@@ -1,0 +1,18 @@
+{
+  "data" : {
+    "id" : "9007199254740993",
+    "siteId" : "9007199254740995",
+    "version" : "provision-9007199254740993-e6bde45248b1d37b",
+    "status" : "FAILED",
+    "currentStep" : "",
+    "workspaceName" : "workspace",
+    "projectName" : "project",
+    "domain" : "",
+    "clusterCode" : "east",
+    "projectId" : "project-id",
+    "namespace" : "team-app",
+    "clusterApiUrl" : "https://cluster.example:6443",
+    "unavailableReason" : ""
+  },
+  "code" : 200
+}

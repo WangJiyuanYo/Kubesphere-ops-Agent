@@ -1,0 +1,109 @@
+server:
+  address: ${SERVER_ADDRESS:127.0.0.1}
+  port: ${SERVER_PORT:8098}
+  error:
+    include-message: never
+    include-stacktrace: never
+spring:
+  application:
+    name: deployment-ops-agent
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://127.0.0.1:55432/deployment_agent}
+    username: ${DATABASE_USER:deployment_agent}
+    password: ${DATABASE_PASSWORD:demo-postgres-only}
+    hikari:
+      connection-timeout: 5000
+  jdbc:
+    template:
+      query-timeout: 5s
+  task:
+    scheduling:
+      pool:
+        size: 3
+  ai:
+    model:
+      chat: ${AI_CHAT_PROVIDER:none}
+    dashscope:
+      enabled: ${AGENT_AI_ENABLED:false}
+      api-key: ${DASHSCOPE_API_KEY:}
+      read-timeout: 30s
+      agent:
+        enabled: false
+      embedding:
+        enabled: false
+      image:
+        enabled: false
+      chat:
+        enabled: ${AGENT_AI_ENABLED:false}
+        options:
+          model: ${DASHSCOPE_MODEL:qwen-plus}
+          temperature: 0.1
+          max-tokens: 1500
+    retry:
+      max-attempts: 1
+agent:
+  provisioning:
+    enabled: ${AGENT_PROVISIONING_ENABLED:false}
+    platform-instance-id: ${AGENT_PLATFORM_INSTANCE_ID:}
+    max-pages: ${AGENT_PROVISIONING_MAX_PAGES:5}
+    queue-limit: ${AGENT_AUTONOMY_QUEUE_LIMIT:20}
+    auto-low-risk-enabled: ${AGENT_AUTONOMY_AUTO_LOW_RISK_ENABLED:false}
+    recovery-acceptance-ref: ${AGENT_RECOVERY_ACCEPTANCE_REF:}
+    poll-interval: ${AGENT_PROVISIONING_POLL_INTERVAL:30000}
+  platform-catalog:
+    enabled: ${AGENT_PLATFORM_CATALOG_ENABLED:false}
+    max-pages: ${AGENT_PLATFORM_CATALOG_MAX_PAGES:5}
+    allow-loopback-http: ${AGENT_PLATFORM_CATALOG_ALLOW_LOOPBACK_HTTP:false}
+    poll-interval: ${AGENT_PLATFORM_CATALOG_POLL_INTERVAL:30000}
+  kubectl:
+    enabled: ${AGENT_KUBECTL_ENABLED:false}
+    executable: ${AGENT_KUBECTL_EXECUTABLE:}
+    kubeconfig: ${AGENT_KUBECTL_KUBECONFIG:}
+    context: ${AGENT_KUBECTL_CONTEXT:}
+    timeout: 5s
+    max-commands: 3
+  mode: ${AGENT_MODE:DEMO}
+  ai-enabled: ${AGENT_AI_ENABLED:false}
+  auto-retry: ${AGENT_AUTO_RETRY:true}
+  max-attempts: ${AGENT_MAX_ATTEMPTS:2}
+  namespaces: ${AGENT_NAMESPACES:agent-demo}
+  poll-interval: ${AGENT_POLL_INTERVAL:5000}
+  stall-timeout: 10m
+  run-timeout: 60m
+  retry-backoff: 15s
+  lease-duration: 5m
+  verification-timeout: 5m
+  stable-checks: 3
+  api-username: ${AGENT_API_USERNAME:operator}
+  api-password: ${AGENT_API_PASSWORD:demo-local-only}
+  platform-base-url: ${PLATFORM_BASE_URL:}
+  platform-token: ${PLATFORM_TOKEN:}
+  verification-url: ${VERIFICATION_URL:}
+  console:
+    encryption-key: ${AGENT_SETTINGS_KEY:}
+    key-file: ${AGENT_SETTINGS_KEY_FILE:./data/console-master.key}
+    allow-http: ${AGENT_CONSOLE_ALLOW_HTTP:false}
+    chat-slots: 4
+    model-read-timeout: ${AGENT_MODEL_READ_TIMEOUT:45s}
+  ops:
+    workers: ${AGENT_WORKERS:4}
+    step-timeout: 75s
+    collection-timeout: 45s
+    strict-platform-contract: ${AGENT_STRICT_PLATFORM_CONTRACT:true}
+    verification-profiles: {}
+    notification:
+      enabled: ${AGENT_NOTIFICATION_ENABLED:false}
+      url: ${AGENT_NOTIFICATION_URL:}
+      secret: ${AGENT_NOTIFICATION_SECRET:}
+      max-attempts: 8
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: never
+logging:
+  level:
+    com.alibaba.cloud.ai.graph: WARN

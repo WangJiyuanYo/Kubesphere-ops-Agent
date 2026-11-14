@@ -1,0 +1,10 @@
+# 整个服务使用 SQLite：无需 PostgreSQL；仅适用于同机持久盘上的单实例部署。
+spring:
+  datasource:
+    url: jdbc:sqlite:${AGENT_SQLITE_FILE:./data/agent.db}
+    driver-class-name: org.sqlite.JDBC
+  flyway:
+    locations: classpath:db/sqlite
+agent:
+  sqlite:
+    file: ${AGENT_SQLITE_FILE:./data/agent.db}

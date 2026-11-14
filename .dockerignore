@@ -1,0 +1,7 @@
+target
+tmp
+secrets
+data
+.env
+.git
+*.log

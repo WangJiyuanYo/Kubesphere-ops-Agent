@@ -1,0 +1,1239 @@
+{
+  "format": 1,
+  "createdAt": "2026-11-14T11:34:01.331316+08:00",
+  "packageType": "source-and-executable-without-local-state",
+  "javaVersion": 21,
+  "includedFiles": 246,
+  "files": [
+    {
+      "path": ".dockerignore",
+      "bytes": 40,
+      "sha256": "af4770e4dc4c077e6456d8afe52a34b79872d6bf5a9347d6ec505f6c3de2f8ba"
+    },
+    {
+      "path": ".gitattributes",
+      "bytes": 45,
+      "sha256": "ddbbb15374ae2ffaee62f0aef04babc710274695142a80eb5f6a1f7cfca793f4"
+    },
+    {
+      "path": ".github/workflows/verify.yml",
+      "bytes": 1071,
+      "sha256": "34bfebb8b7167d5e38bbfe5a674d0299fa6833f6b36fabc47fc3c3edb9acca56"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 75,
+      "sha256": "34a3a496a4b9bbe571b539fea15a3dde57f05faac8b816a634838bb7c45a6008"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 4209,
+      "sha256": "bd4d1a7302ca56e133b2832491b725ca316cbb6d705711da7451d0452a73473a"
+    },
+    {
+      "path": "Dockerfile",
+      "bytes": 471,
+      "sha256": "821ed480189b2e128c4606f8ced72e4f4aa575b02baa790c5cb2fd4a93d6df18"
+    },
+    {
+      "path": "README.md",
+      "bytes": 35327,
+      "sha256": "6d6d619ee3a4a46c09083f59bfdc1104cbf49b9651b204452a2d09722ec394d0"
+    },
+    {
+      "path": "ai-shared/memory/ai-pitfall-library.md",
+      "bytes": 5543,
+      "sha256": "7473a23d0cf9734373f0bd67de9ad9f286347752076508fc2887f8769e55bb5d"
+    },
+    {
+      "path": "ai-shared/memory/known-issues.md",
+      "bytes": 3858,
+      "sha256": "134e290a42e552da1575a796b6deb0cf7789c83131000c2f1a83768b4c005834"
+    },
+    {
+      "path": "ai-shared/pitfall-examples/api/2026-11-12-pitfall-63f5da80fee4.md",
+      "bytes": 2111,
+      "sha256": "7b991ae4b8e7840281e514b7be8662fe2d778cb5e181e9ba846e156fc5281c7d"
+    },
+    {
+      "path": "ai-shared/pitfall-examples/api/2026-11-13-json-mvc-xml-4b7ad7ec5b28.md",
+      "bytes": 1358,
+      "sha256": "104e9f2d65245d158fd30c8b548afc8403706ac439151096d48b66983ec2b634"
+    },
+    {
+      "path": "ai-shared/pitfall-examples/api/2026-11-13-pitfall-0db364bd0a9b.md",
+      "bytes": 1475,
+      "sha256": "61f3990da35bead20c964e5cd31aafcf9389c750c1f89ca7bc71c9c83d33b7a6"
+    },
+    {
+      "path": "ai-shared/pitfall-examples/api/2026-11-13-pitfall-baeeceee19e9.md",
+      "bytes": 1334,
+      "sha256": "5a054369b0754714273af0810a345d63c2bdfb3be98b733bdd88a27f95df94a4"
+    },
+    {
+      "path": "ai-shared/pitfall-examples/build/2026-11-13-powershell-7-powershell-53ded96bf546.md",
+      "bytes": 1967,
+      "sha256": "f19e30bd99b7bf13c6cb8305791d665093904cb5371d89c039e5cb1849d873f1"
+    },
+    {
+      "path": "ai-shared/pitfall-examples/workflow/2026-11-10-pitfall-5686983c6179.md",
+      "bytes": 1802,
+      "sha256": "979ad49bbf4d212afdef7a1f34ac2b9604551b355121e4767a319b5105f07718"
+    },
+    {
+      "path": "ai-shared/pitfall-examples/workflow/2026-11-11-pitfall-dfde69b5e20a.md",
+      "bytes": 1540,
+      "sha256": "abd47c8557ce015b776f6b87c7cde86e6d322f3bd426d342b6e7b2e60320f530"
+    },
+    {
+      "path": "ai-shared/pitfall-examples/workflow/2026-11-11-pitfall-f1b11c164ade.md",
+      "bytes": 1691,
+      "sha256": "bd0d94f86533d525584dd5ae83f223e43b3062b36a368517f351bf2a64f51740"
+    },
+    {
+      "path": "ai-shared/pitfall-examples/workflow/2026-11-12-graph-707a90263fe6.md",
+      "bytes": 2300,
+      "sha256": "7d8c28d0e46e560cd7a483886782f8d58cd908d1dc687ee77c3d1ff1d89df1c4"
+    },
+    {
+      "path": "ai-shared/pitfall-examples/workflow/2026-11-12-id-28d971ea75c8.md",
+      "bytes": 1755,
+      "sha256": "db0e9110bbda85fdeeb9db6f810fc532c993442c90296b57a5c69a39c247dc6e"
+    },
+    {
+      "path": "ai-shared/pitfall-examples/workflow/2026-11-13-job-pod-ce14e1ebc32e.md",
+      "bytes": 1707,
+      "sha256": "a5be51ef4899b4eaf37fd2c414801d7f23842ab01f77d50187363a8f32a68521"
+    },
+    {
+      "path": "ai-shared/pitfall-examples/workflow/2026-11-13-pitfall-98ed72f09316.md",
+      "bytes": 1305,
+      "sha256": "05013a94d95efb65d009dee24394b158c27b5025ef7fa309a019b1f7702198bd"
+    },
+    {
+      "path": "ai-shared/pitfall-examples/workflow/2026-11-13-stage-authorization-revision.md",
+      "bytes": 1265,
+      "sha256": "8c77d158c52252e03678b4bdc72feca112dea26b4321065227e6eb423a4832cc"
+    },
+    {
+      "path": "compose.yml",
+      "bytes": 486,
+      "sha256": "069388d017ef433586965368fa9d512be9c90e47dab3db53cdde079c21ad5c44"
+    },
+    {
+      "path": "deploy/deployment.example.yaml",
+      "bytes": 3230,
+      "sha256": "6faa28659eb1c266a44644c661073e5c8cd602d63c0b1740207633a65c065cda"
+    },
+    {
+      "path": "deploy/rbac.example.yaml",
+      "bytes": 1106,
+      "sha256": "30ae5e93ed842015824facdc2b293dfc4bb010f23216702d16a8233425906f5d"
+    },
+    {
+      "path": "docs/代码复审-业务闭环-2026-11-13.md",
+      "bytes": 14822,
+      "sha256": "856cecd01a98617986d58a1b522ac280c77b8fd03538cfc9bed744f2854e9abe"
+    },
+    {
+      "path": "docs/代码评审-链路衔接-2026-11-12.md",
+      "bytes": 13281,
+      "sha256": "1a551b01bfeeb6bb6f51366444fd426c8efef6f36d2a9084b0bf3f4fbc1f2cd6"
+    },
+    {
+      "path": "docs/代码评审修复与剩余问题-2026-11-13.md",
+      "bytes": 10191,
+      "sha256": "40531faf9742582bd80a0e841cca37f2294bf62dabdecde422b599a008d9dd7b"
+    },
+    {
+      "path": "docs/可用Agent交付计划.md",
+      "bytes": 3945,
+      "sha256": "b4a357a95e2a39c00cca4fb77bd7ebec71e36aee2fd5041edfa49fcbfbbda684"
+    },
+    {
+      "path": "docs/平台严格契约与通知接入.md",
+      "bytes": 10812,
+      "sha256": "9b0b05748c1795988d058a2e1d7ccac3bd39ad9ad8d960885b4172a5b444af10"
+    },
+    {
+      "path": "docs/本机平台目录联调.md",
+      "bytes": 6084,
+      "sha256": "d7bb78bfba2933479e6866732778a80bdd0161618268761be535fb3ea7359b30"
+    },
+    {
+      "path": "docs/租户KubeSphere连接导入记录.md",
+      "bytes": 6876,
+      "sha256": "8af876532fac6b21e12362da1971b41404d8f7046bd17cf024856c7403fb9d30"
+    },
+    {
+      "path": "docs/站点开通部署自愈与持续学习_迭代方案.md",
+      "bytes": 31120,
+      "sha256": "41a43c816297969a26ae8ac89b2b43401d6acb6faf2d1f0deed1765688af8e4f"
+    },
+    {
+      "path": "docs/站点开通首期_实施与验证记录.md",
+      "bytes": 6226,
+      "sha256": "6544bed73edd4a57939cc4d5acc352b855f202614806be355b6a17859508e946"
+    },
+    {
+      "path": "docs/站点阶段协议与自动托管接入.md",
+      "bytes": 6271,
+      "sha256": "7a404397c9944181181c05a903facb21204adfea6e152496af55fa08885020e1"
+    },
+    {
+      "path": "docs/逻辑评审与补充计划-2026-11-11.md",
+      "bytes": 9215,
+      "sha256": "e0b28371c151d2b2eb5a75bb4707ce4e9ec7ffe4abc9d572c737b92312a809fa"
+    },
+    {
+      "path": "docs/验证记录.md",
+      "bytes": 56634,
+      "sha256": "bea984dc561e4292d0dbea315a037552dffccfdaef4626065c4a89f79a7762b4"
+    },
+    {
+      "path": "examples/application-kubectl.yml",
+      "bytes": 378,
+      "sha256": "3e45b2342fe4fb3b50a65bc757b2aeae046e93362294e227cb87b22c6fbabbb4"
+    },
+    {
+      "path": "examples/application-production.yml",
+      "bytes": 339,
+      "sha256": "12df3908e7dc0d94d9ef1c71a79571243eb148adfb2e4ff1deb2f06c6e81433f"
+    },
+    {
+      "path": "examples/deployment-event.json",
+      "bytes": 173,
+      "sha256": "82c0f3be783fe69eef60898e7538e95da046002aa3f5d7034877258b9ff3f7e5"
+    },
+    {
+      "path": "examples/provisioning-stage-event.json",
+      "bytes": 767,
+      "sha256": "10ca9cd528b52e4ab42c3c4194b405321012cd4e9a2cfcf6dda29750fa6cde4b"
+    },
+    {
+      "path": "examples/start-demo.json",
+      "bytes": 257,
+      "sha256": "b0da0c172422a2bb488a0b5b8706937dca697ea4e164a26c1adc47c99e4778b3"
+    },
+    {
+      "path": "examples/start-kubernetes.json",
+      "bytes": 359,
+      "sha256": "02f38dff7d58d135af020ed6635dcdcdc669517736f1e49901360bc358364f70"
+    },
+    {
+      "path": "feature/部署运维/Agent管理控制台_PRD.md",
+      "bytes": 23192,
+      "sha256": "b09e40f81b87610f6235a39fe18619922dfdce4cfe7656029c07a5192e3c1598"
+    },
+    {
+      "path": "feature/部署运维/SQLite与排障记忆_PRD.md",
+      "bytes": 12067,
+      "sha256": "dbef50575865301f85ea16358a4793a9da2feae933db813cbb426b79e2294751"
+    },
+    {
+      "path": "feature/部署运维/kubectl受控排查_PRD.md",
+      "bytes": 8359,
+      "sha256": "d7163baa1aba1a96bf28b594fe2ad95e231690cb86bba06b5c3bf6bd226864d6"
+    },
+    {
+      "path": "feature/部署运维/对话只读排查_PRD.md",
+      "bytes": 8061,
+      "sha256": "eca1b2166b7a00b6564e4880188d6288b76293e91cac76e7105ee7b19e6b0138"
+    },
+    {
+      "path": "feature/部署运维/站点开通与自动托管_PRD.md",
+      "bytes": 7191,
+      "sha256": "44573a76bc82e6eaa7585c265a49b51f457cd4cee6ca5521c0b10ee2ee0d0483"
+    },
+    {
+      "path": "feature/部署运维/自动复盘与学习_PRD.md",
+      "bytes": 7001,
+      "sha256": "4ec2b37aacb1edba5e4fcee57d7e9466b9ae95eb83f0407b3c25d7eeefe3c1c4"
+    },
+    {
+      "path": "feature/部署运维/部署发现与手动接管_PRD.md",
+      "bytes": 18323,
+      "sha256": "2457a0351fd999e8671ba888ab0999a2a79ddfef3a5bb4ef3b74a284ef1a3617"
+    },
+    {
+      "path": "feature/部署运维/部署自愈Agent_PRD.md",
+      "bytes": 14174,
+      "sha256": "ef2f6e44b10c06e5d5b7c5371ad85c0594f9f9937abd4a579624503a9c134d2f"
+    },
+    {
+      "path": "feature/部署运维/部署运维Agent项目_PRD.md",
+      "bytes": 43357,
+      "sha256": "3edfb6e72a94d252acc547cb3c8cc4bbff30b8c1229666cfd61675670adc0b4f"
+    },
+    {
+      "path": "pom.xml",
+      "bytes": 3125,
+      "sha256": "e6d5a40852566e202967bea7401d2584c4e8551d986189de4d0c9d6c86d5fccf"
+    },
+    {
+      "path": "scripts/backup-local-store.py",
+      "bytes": 2221,
+      "sha256": "05c5e4c70f63f0743084d843aaad6ee4c0f7999cb82e5163efe240a52e4323a4"
+    },
+    {
+      "path": "scripts/configure-local-platform.cmd",
+      "bytes": 295,
+      "sha256": "73ca04882687b468f1772646c68a4ef7e86d9ff230d9a7d3d67eccb1296f02ab"
+    },
+    {
+      "path": "scripts/configure-local-platform.ps1",
+      "bytes": 8519,
+      "sha256": "66a58829d11d8942904bd02edbf6437e3ab6a1bfb6067b3169782da1bf36d3e3"
+    },
+    {
+      "path": "scripts/demo.ps1",
+      "bytes": 1487,
+      "sha256": "e389f58154b00c979523e81d07e3c552d509da15642daf48fc40edd786d56f4f"
+    },
+    {
+      "path": "scripts/start-local-platform-agent.cmd",
+      "bytes": 299,
+      "sha256": "e024ee356cf223db90d00c00a504183f399a99143206d854321b64acfd8ca193"
+    },
+    {
+      "path": "scripts/start-local-platform-agent.ps1",
+      "bytes": 5627,
+      "sha256": "0d0b100d1b2d8ace2773d7d70de5f81ae711f0960891e5dff9743f572e9f23c9"
+    },
+    {
+      "path": "scripts/update-local-readonly-agent.cmd",
+      "bytes": 232,
+      "sha256": "f6a9ed4064328bf4a6dda8f4d3f0e7d829cf7d5c3ce28fe2ac35326d0950c815"
+    },
+    {
+      "path": "scripts/update-local-readonly-agent.ps1",
+      "bytes": 4810,
+      "sha256": "6ecb8e98a9027be36d92a66db6cff34e1f3e4137c1cccfbac4109b6015671228"
+    },
+    {
+      "path": "settings-central.xml",
+      "bytes": 340,
+      "sha256": "cb11c9fee7a678a0d224bbf532f4048a86777493040bb595f18f8558562e679c"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/AgentProperties.java",
+      "bytes": 2524,
+      "sha256": "1e59ba64719eb38a2a393af445f00b37a48264a0ad1391395ee2a5d86ab9aee5"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/DeploymentOpsApplication.java",
+      "bytes": 780,
+      "sha256": "c032a330d4c058908143cbd5eabfef8cb4fd44c12f54fbb99b1c0b7fa4d975ae"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/OpsProperties.java",
+      "bytes": 2286,
+      "sha256": "dc8bace5cc4f3e8c1911fd60746228961c9e8d0af78d946189ac8aa6f13e5dc1"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/api/ApiErrors.java",
+      "bytes": 1159,
+      "sha256": "b6e421e09119ce2a828717a801875252462bec87e2de56c95620dceba67d97bd"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/api/OperationsController.java",
+      "bytes": 4315,
+      "sha256": "3bedbedb530b06c5957fd32a6ee34534c7ef965ae50b7f2617ef4a6aa22fe037"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/api/ProvisioningEventController.java",
+      "bytes": 790,
+      "sha256": "ba2d4dbedc1b859b25745094702a5e1074702f8b5268d92f459430fe5db9b023"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/api/RunController.java",
+      "bytes": 2561,
+      "sha256": "b9da70d91a95509a32c3b7d1e29087f787e3f1b3f49d6225e33a01fecc2892f6"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/command/BoundedProcess.java",
+      "bytes": 2735,
+      "sha256": "5f89e6c430b317f1c979c8a7c23b054bb4b44c3f8d3b0ab25a7cbfdd3d3aa325"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/command/CommandAudit.java",
+      "bytes": 3612,
+      "sha256": "8d7030866e5bfb6b14eb053afd388d97fa1e55d7efe7809a0e9fda29f4d4e22a"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/command/CommandModel.java",
+      "bytes": 1527,
+      "sha256": "bcf5e80273f755bb9eea8c49f451ef3b4f74d9b9212fcf8e3e04e4cae9ac4b00"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/command/CommandPlanner.java",
+      "bytes": 3337,
+      "sha256": "3dfac19c1eee8bb511b58670ea70ee27925d7a069df9fd44868c2b967d10edfe"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/command/CommandSafety.java",
+      "bytes": 3107,
+      "sha256": "e555f70689408a2304637a941a25b2ac85c5f53867ac8d17703b9214899c5f1a"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/command/CommandScopeResolver.java",
+      "bytes": 4386,
+      "sha256": "4838503f5298737aec4c4d9126642432a689a7aa5d68ccd4e7f9b1dc94e8b7f1"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/command/KubectlIdentity.java",
+      "bytes": 2091,
+      "sha256": "5c103cb175c2bcf856794bb97290bb65e5cf516c76215526847b0d4f95e60085"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/command/KubectlProperties.java",
+      "bytes": 1386,
+      "sha256": "fe443ed0773fa2a560b6415d250ca8ffae2da46957846901fbfa8938bf86818b"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/command/KubectlWorkflow.java",
+      "bytes": 5579,
+      "sha256": "93cae0b024133cf10e22c9fa911b1683e6759896769337b3920d61a0ef030e41"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/config/RuntimeConfiguration.java",
+      "bytes": 2671,
+      "sha256": "be4474a7b507510e6dfa3a265ab63e17cc58ed3edc59e358f82d8b4e253295a4"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/console/AgentChat.java",
+      "bytes": 13162,
+      "sha256": "2e2407b82bb695e89f90c7c3071384a98b53e198be1102df36d47ab7ba8e1965"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/console/AutonomyGuard.java",
+      "bytes": 4919,
+      "sha256": "1dc0690048e15788d685d79537ea61432f1625e81c7634ba16859dd215556d3f"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/console/AutonomyPolicies.java",
+      "bytes": 7358,
+      "sha256": "a43a28e7413510b28be794e92370762d2a830dc76a8d4c0b57ff4a1831a7da4e"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/console/ChatContextGuard.java",
+      "bytes": 2685,
+      "sha256": "8ea9644e492e04733081c640c94ca6ac0c62ac8ad2ce181be92c777b81b55808"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/console/ChatInspectionController.java",
+      "bytes": 1613,
+      "sha256": "1727d08c1b61622ee4993c86cfbd6221b94aba2c80e84bba6d8d257923b640cd"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/console/ChatInspectionGraph.java",
+      "bytes": 10735,
+      "sha256": "cd5402a60f2fd2ba8dffd41b3a7562538b72b0c87c221dc9c18a5b3da5f4ec06"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/console/ChatInspectionStore.java",
+      "bytes": 2806,
+      "sha256": "82fbe43715157adc8447eca7c9aaba962d674548dd70dbcccb0170de016fda22"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/console/ChatStore.java",
+      "bytes": 11931,
+      "sha256": "820ff7de1b9a08b2c114c6eb898a28ef687def4d5806ab6d7822ee8ef16dfb09"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/console/ConnectionTls.java",
+      "bytes": 2264,
+      "sha256": "a997a6bc6a768f951d3c4d181dbc804d32d2af890b8538a83988595631ac5238"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/console/ConsoleController.java",
+      "bytes": 5297,
+      "sha256": "3e7dc134c839f8edba513c7e83192c5c983af169c087affb0bfea0581d9d1bf6"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/console/ConsoleErrors.java",
+      "bytes": 1151,
+      "sha256": "b4c2ac714b20fe26e6a723e678da7779bd83d91eb4fcdbbc18fe8fa8216672a7"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/console/ConsoleFailure.java",
+      "bytes": 152,
+      "sha256": "3ea32378e8e10d780525770d5bc7aeea6efaa78d9dddb754bed41211ae5141c2"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/console/ConsoleOriginFilter.java",
+      "bytes": 1644,
+      "sha256": "0ebb1dff3f173352bdd70d3835290d95818f21a80771a297713168e5f5c6bfef"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/console/ConsoleProperties.java",
+      "bytes": 1153,
+      "sha256": "0cfc0e0ef0943024beee11b8059b5fdf64eae079a5e49fc19af677821373f9ca"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/console/ConsoleSettings.java",
+      "bytes": 11286,
+      "sha256": "236c155cd1ebda1b5fe8f4fd483acaa60321e955fd23244b38e575958ba2b174"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/console/ContextMismatch.java",
+      "bytes": 220,
+      "sha256": "30caf05aa46ac3c24890a5a2db73c680967bb369716f6a6b4e3147a61838a059"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/console/DeploymentCaseController.java",
+      "bytes": 1147,
+      "sha256": "1612387a84c2f4b23bb71a049e58592e925626c45be1b5579bf82cba60fafaf2"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/console/DeploymentCaseService.java",
+      "bytes": 10081,
+      "sha256": "0ace6a8543215098e81fe1b11b6ee7a4eaea42892318a65bd702e726d165132c"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/console/DiscoveryController.java",
+      "bytes": 2281,
+      "sha256": "720f66258e22f2f28eacb69ebe093b6062bf62c6de22f10fd2afb65f77dea0c2"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/console/DiscoveryGateway.java",
+      "bytes": 8911,
+      "sha256": "60b28834a710155ced682c1a3b1c04cc5ec9346f05c8704ad506e007f7e26384"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/console/DiscoveryScheduler.java",
+      "bytes": 1160,
+      "sha256": "4f322bf4b85f58fe8ca6b752afcb57fa5fd6dcc16a8cbf170d40b7fa576fee6c"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/console/DiscoveryService.java",
+      "bytes": 3451,
+      "sha256": "6dc30eeab7cefad858fb29c6301b7a29eb85dddefb76356019193780b4a4c45e"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/console/DiscoveryStore.java",
+      "bytes": 16290,
+      "sha256": "c2dbf0fe59061e9ea81d933d0cf02ce45d2600302d6d7ba44e445c40c4060058"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/console/KubeSphereGateway.java",
+      "bytes": 3864,
+      "sha256": "a6c14cbba7607ae0dfa3c87a527255159603112ced7c6447854e95688d98f306"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/console/MemoryController.java",
+      "bytes": 4332,
+      "sha256": "43a5996ffbe244b2eb96375aebbc4c1f76ab3026a31e12a22c964e5a6f08f7ae"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/console/ModelCatalog.java",
+      "bytes": 3642,
+      "sha256": "4d8bfcead004e5890938c69f0e7ee1647271644ac9357e32c835fdb115c63575"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/console/ModelFailure.java",
+      "bytes": 1978,
+      "sha256": "be00a42b684b98f6a5e2ba6e556fceb3c7339d1abdc8e79294b3aa487d32d7a0"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/console/ModelGateway.java",
+      "bytes": 8826,
+      "sha256": "4dd03a4097d4e7da067acee34b31c9d7c54dda2b95537ebfd96f0d127cba94f0"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/console/PlatformCatalog.java",
+      "bytes": 8208,
+      "sha256": "2b2af161f3e8d3902838e9a8a64a6ddf4a7ab8aff09c8684c247f2f8918c0c17"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/console/PlatformCatalogController.java",
+      "bytes": 1032,
+      "sha256": "e0750be83ad0cf9f1c9438e18b32115ff483c9f808edb4493b42d9c5c770bc95"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/console/PlatformCatalogGateway.java",
+      "bytes": 5872,
+      "sha256": "692d37ce1f6c58478f6efb2222fb74c900d762ecb4e549d8a37a29f831b7ec85"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/console/PlatformCatalogProperties.java",
+      "bytes": 1410,
+      "sha256": "3a1e9f18987dc20aac82282858f0556b7f36c41310c10f4b64c3a7cbc7744b36"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/console/ProvisioningAutonomy.java",
+      "bytes": 13416,
+      "sha256": "dc4d461bacfed279b7f08fa32f7b164eea98c1629605ffaf27b588f100d800db"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/console/ProvisioningController.java",
+      "bytes": 2513,
+      "sha256": "9c9204d4f2a0a69ac229472110b86ba40b92d0fc9b271699ab0bb6af6118aec9"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/console/ProvisioningGateway.java",
+      "bytes": 5144,
+      "sha256": "724aa9cb1fa9dc5b5d1fa75a90010555a2ca4587e2f60e1e7192d0d6356f6e10"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/console/ProvisioningModel.java",
+      "bytes": 2826,
+      "sha256": "acef1dd96c919a6df4705ef305bb082d26484c2dd0d5d0ac4500ed48313e6151"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/console/ProvisioningProperties.java",
+      "bytes": 1252,
+      "sha256": "c49d791e329a62b51ba82c6c23bdf6545237e8282941080ac1d23099e3dc516b"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/console/ProvisioningScheduler.java",
+      "bytes": 712,
+      "sha256": "fce6e031d9a11ffbe8cbb35d8f66df36d240bb74eaab17c1793c2ddface89f9f"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/console/ProvisioningStore.java",
+      "bytes": 13257,
+      "sha256": "78116431f09698c5fc89a917f6ab61fcf0c7c0947feb8753465a07e3c16fef32"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/console/ProvisioningSync.java",
+      "bytes": 4607,
+      "sha256": "e52bbf774c284f71f107744d2c9de95ef84c6e0d0cd3cf56054a7965aa793907"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/console/ReadOnlyEvidenceCollector.java",
+      "bytes": 22610,
+      "sha256": "cfa3d116f8b1605b045f50b08c0d27332916d53da9ffb16ba58660d471d2041c"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/console/ReadinessController.java",
+      "bytes": 4704,
+      "sha256": "1ed8fd32d326c075e19d5974beb98900945cc57fa0b2a80da5f046f09ce57e94"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/console/RecoveryOutcomesController.java",
+      "bytes": 2254,
+      "sha256": "0a678e84f0c15c0532359a814bc7f87a546c8ac853d0346359aaaee789488b57"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/console/RuntimeNarrator.java",
+      "bytes": 1840,
+      "sha256": "dd5aeeabe4801164fdd40288004c5bb18b2ef57757b43b198f0786acfc78d834"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/console/SecretCipher.java",
+      "bytes": 3950,
+      "sha256": "b8e2904b762a25512c3a6ec0aae8c8f9ac6e83cfa464aa1e8a475ff680752e1c"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/diagnosis/AiNarrator.java",
+      "bytes": 3396,
+      "sha256": "a93a32ab0f89ec34c23f3e1a0667893b2222f1735585911a9318edf6de20d34e"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/diagnosis/DiagnosisGraph.java",
+      "bytes": 8893,
+      "sha256": "3c2884851014b11b81dbbf3856a516187371b19ebe27297a3e9e72b24ecd7894"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/diagnosis/DiagnosticNarrator.java",
+      "bytes": 173,
+      "sha256": "0fd6f92fcc10f1e118ebab02bb4f0e9a0b7fc319077c516ff98fd2346739cb6c"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/diagnosis/RecoveryPolicy.java",
+      "bytes": 2200,
+      "sha256": "5c1df25cb5afc222230c11d7c66f5dafb37975fd78b0eafdc28ae229719aa705"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/diagnosis/RunbookNarrator.java",
+      "bytes": 1428,
+      "sha256": "163c3720db2fa386f7655932be16c0e83fea4b7084301f3910d988e61b77f9eb"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/diagnosis/RunbookRegistry.java",
+      "bytes": 1291,
+      "sha256": "979e24fc53081ea23894de413c64c8d9c487a2bfefe2b4df68ff4a22baa334df"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/domain/DeploymentIdentity.java",
+      "bytes": 3990,
+      "sha256": "c3b1123f0ee3a0de9a2fa88d8df073365ef403156ba62a8921f43632155cd4fa"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/domain/Model.java",
+      "bytes": 7768,
+      "sha256": "e771c43e55f0e66a54e2c3235027a4978dce02d34495c1a1276f773a9161f3fa"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/evidence/Redactor.java",
+      "bytes": 1345,
+      "sha256": "287f2299a84f5f7210bfbb8b094aa13889d13633959dc99a405c8b9a12754071"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/memory/LearningOutbox.java",
+      "bytes": 6806,
+      "sha256": "5a09c97be9e371bea2fe69e6644886b64d78c6fc1b131f5288cf72f15647351b"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/memory/MemoryCapture.java",
+      "bytes": 2123,
+      "sha256": "a275794d652a2a70e48f9f9a1948ed8ecfc1538aa8d61d1387f430562c4fbe36"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/memory/MemoryRecall.java",
+      "bytes": 1923,
+      "sha256": "f12687e281e4a8bc240c37f0c5109f4e968739168070e451e4db43a0a7ccceaa"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/memory/MemoryStore.java",
+      "bytes": 16597,
+      "sha256": "aa2ac46cac33862ddea14c4035ae372af5ca0d69efcdeae9f15fc89681eb4990"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/memory/SearchTerms.java",
+      "bytes": 1543,
+      "sha256": "62697d60623e7d461dae77221ced541399e77a83a4988214afe8ac6734eb19b0"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/notification/NotificationDispatcher.java",
+      "bytes": 5375,
+      "sha256": "503d2fb6d1995f1063cc0aac2f2d200ababeec46146324927cbc3a8a0790944d"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/persistence/DeploymentInbox.java",
+      "bytes": 7463,
+      "sha256": "048d36a2bb5edc57c3bd9dbe6e454f36eea441a3b259ef18fca84605d41cf20a"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/persistence/JdbcRunStore.java",
+      "bytes": 13060,
+      "sha256": "2b04f9cd63085a3be5eb3ff8006e06766a37b9039eb7606de11a63cd8bf87a93"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/persistence/ReleaseRunRegistry.java",
+      "bytes": 3168,
+      "sha256": "3c45c8ae8ad9ab44c2253c92c6c1ecb83e827d5a5021d663a6cb4ef2b3265dd4"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/persistence/RunDiagnosisBudget.java",
+      "bytes": 3171,
+      "sha256": "9c616f275549d1b75d42ccb87a946a067d1ce6c93b2e1a15d38426d5b8d58a78"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/persistence/RunStore.java",
+      "bytes": 638,
+      "sha256": "729b4121a86463ad4d8a0f0b525e038425b43e01d4363511483214997053c2ee"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/persistence/SqlDialect.java",
+      "bytes": 2643,
+      "sha256": "b2a2ffd3fac0902d46f369c081cc59dc1c50a17f708a3429ff1fc9978b52b47b"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/persistence/SqliteConfiguration.java",
+      "bytes": 1377,
+      "sha256": "d77b613653986f51d1fdeff16973258b045788a500910422877b7aa927eb5f76"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/port/DemoDeploymentPort.java",
+      "bytes": 1244,
+      "sha256": "e5228249f8a43a7286e43b056b0876b3c16e8e0232d76f8307505226d04e0a36"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/port/DeploymentPort.java",
+      "bytes": 971,
+      "sha256": "b3194a9e265118ac80e2276a04801defe1d587c48eacbc2e5023efcd40a65adf"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/port/KubernetesDeploymentPort.java",
+      "bytes": 25271,
+      "sha256": "62b950ec6c5212883933046fbce89aefa4e528ab5846cc82475b9df2e2db2119"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/workflow/RunEngine.java",
+      "bytes": 11873,
+      "sha256": "1f8a944337e8ac71a5c57cec22d9fd0a9aaa909f272b6da42601f09ce2b5ba24"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/workflow/RunScheduler.java",
+      "bytes": 3873,
+      "sha256": "c9066121557999f89b346520bbeffc45d4902b65ef56ead31d9e62d367c02662"
+    },
+    {
+      "path": "src/main/java/com/lanhao/ops/workflow/StepControl.java",
+      "bytes": 1386,
+      "sha256": "8d1dd0e8f71fa43c8e4578a378f3d7f0f2b0ad490dc203fbab489059e4211757"
+    },
+    {
+      "path": "src/main/resources/application-sqlite.yml",
+      "bytes": 330,
+      "sha256": "2f563419bf0b4edf57ae6e453a8be484c5d1a487937c6b66d59a45e4a2fe3ee0"
+    },
+    {
+      "path": "src/main/resources/application.yml",
+      "bytes": 3313,
+      "sha256": "ce2902f8fbfff358c02b2038a4a59195ff66b8a61b874d55df37767b02a1d620"
+    },
+    {
+      "path": "src/main/resources/db/memory/V1__memory_fts.sql",
+      "bytes": 1504,
+      "sha256": "5de4623eb3e4e7db41b78c2afdac4a45a5634b3848e2a44541547cfec7f5e930"
+    },
+    {
+      "path": "src/main/resources/db/memory/V2__source_scope.sql",
+      "bytes": 231,
+      "sha256": "55a15229f43beecd9dc76db8b6b15bf893c1695de3517d5366545c6393db4a49"
+    },
+    {
+      "path": "src/main/resources/db/memory/V3__recheck_legacy_automatic_recovery.sql",
+      "bytes": 436,
+      "sha256": "220c5565a808866a9d973ddefb6ae816fa4c06cd225f90ecca6f052ab4b6f5ac"
+    },
+    {
+      "path": "src/main/resources/db/memory/V4__memory_feedback.sql",
+      "bytes": 503,
+      "sha256": "b6facc949e23f38e768c2e2bbe2a6636868cd3eacc32bd597e9a4ff842a178f3"
+    },
+    {
+      "path": "src/main/resources/db/migration/V10__learning_outbox.sql",
+      "bytes": 406,
+      "sha256": "ad0471bbc45640821abdacab8d894dd02a12b90c146c68ea1aa27aa2689a6ef7"
+    },
+    {
+      "path": "src/main/resources/db/migration/V11__discovery_namespaces.sql",
+      "bytes": 243,
+      "sha256": "e2a59ae437fea428d3cac639f5945ca6a62898c2dbf188ab3052d0bc65f329cf"
+    },
+    {
+      "path": "src/main/resources/db/migration/V12__case_recovery.sql",
+      "bytes": 315,
+      "sha256": "b3165a8f9c49ea181fa0bd529f5abb1ff735a8aa0ad3185c374066343bc1dbec"
+    },
+    {
+      "path": "src/main/resources/db/migration/V13__platform_catalog.sql",
+      "bytes": 478,
+      "sha256": "b1cb5dbef11a0640c824a7e2e5b1d348362f9ccac34a57d61ed0aec66c7e6f0d"
+    },
+    {
+      "path": "src/main/resources/db/migration/V14__chat_inspection.sql",
+      "bytes": 146,
+      "sha256": "a91fabd8616d4e3e2ae76507ff66c5f3c8f20bee6ace39630fd0bf3d9ee74513"
+    },
+    {
+      "path": "src/main/resources/db/migration/V15__provisioning_autonomy.sql",
+      "bytes": 3595,
+      "sha256": "1908220c3d2f5be62f1e266d874d009d8b5cc55bf91d8cfba9323a451cd1dd82"
+    },
+    {
+      "path": "src/main/resources/db/migration/V1__agent_run.sql",
+      "bytes": 765,
+      "sha256": "994c1f243996f565852781aeef8264ca8a92666d144e8919116c1655a237ac5f"
+    },
+    {
+      "path": "src/main/resources/db/migration/V2__approval_deadline_queue.sql",
+      "bytes": 178,
+      "sha256": "b45e6a18937dc5295b7bf67bfdb97e928a97048fa87c2d4e6db351baa31f4bec"
+    },
+    {
+      "path": "src/main/resources/db/migration/V3__events_audit_and_notifications.sql",
+      "bytes": 1779,
+      "sha256": "781ef1a83e23ca26a0205d494730450ab67c9a6eaca97756197187ad2723994e"
+    },
+    {
+      "path": "src/main/resources/db/migration/V4__inbox_conflict_isolation.sql",
+      "bytes": 214,
+      "sha256": "8ac50f86556c178ab70f6050975e13a377a5261a5329c8aa3351d70954324cd9"
+    },
+    {
+      "path": "src/main/resources/db/migration/V5__console_settings_and_chat.sql",
+      "bytes": 1412,
+      "sha256": "f14dfbb9c30fd91cff3c128c6d80b940420417027b7a30cba3633f9c29f12235"
+    },
+    {
+      "path": "src/main/resources/db/migration/V6__memory_outbox.sql",
+      "bytes": 510,
+      "sha256": "8f575f7b9e485ed870c16157b710e58179756f8e067161113ab3138b0b48bcc2"
+    },
+    {
+      "path": "src/main/resources/db/migration/V7__command_execution.sql",
+      "bytes": 322,
+      "sha256": "84c1ee7aefcb6ef47b61b411dd918168f4520201e04f512ae1141ef01fdeda02"
+    },
+    {
+      "path": "src/main/resources/db/migration/V8__deployment_discovery.sql",
+      "bytes": 1461,
+      "sha256": "71d65eb0931b516087e73149b8fdabf01b4921acac972f823ac672ccd885d4da"
+    },
+    {
+      "path": "src/main/resources/db/migration/V9__chat_target_identity.sql",
+      "bytes": 73,
+      "sha256": "799b4e33d45c33a92fa7c124b65b22d4158cef5e35ef83d34df107b0714fc12e"
+    },
+    {
+      "path": "src/main/resources/db/sqlite/V10__provisioning_autonomy.sql",
+      "bytes": 3588,
+      "sha256": "af2ad89f122542aef6f813eb2d256954188a3be5992c30c33b025de58eb661ce"
+    },
+    {
+      "path": "src/main/resources/db/sqlite/V1__agent.sql",
+      "bytes": 4597,
+      "sha256": "885a48bc57134fdb9921cfa77f5dfd8ed5690805a2216d4bbbea503cbacfde8f"
+    },
+    {
+      "path": "src/main/resources/db/sqlite/V2__command_execution.sql",
+      "bytes": 357,
+      "sha256": "1ce6f1ab5b5d4a8957386b9f6ca39b11164b56131e640855211f50d23429058d"
+    },
+    {
+      "path": "src/main/resources/db/sqlite/V3__deployment_discovery.sql",
+      "bytes": 1627,
+      "sha256": "d9cb8c3dc2ae8eeec5a64b121acb4a80a6f17d78e64791b0e31425b8f819fa14"
+    },
+    {
+      "path": "src/main/resources/db/sqlite/V4__chat_target_identity.sql",
+      "bytes": 66,
+      "sha256": "058f03358f3bf2438931b1a2913de6670dbaf6c5e63c3ce281eab4be6eee360d"
+    },
+    {
+      "path": "src/main/resources/db/sqlite/V5__learning_outbox.sql",
+      "bytes": 448,
+      "sha256": "e10d7f0178c484ec141539790e1cf72a538074954411485191d99633570fecbd"
+    },
+    {
+      "path": "src/main/resources/db/sqlite/V6__discovery_namespaces.sql",
+      "bytes": 271,
+      "sha256": "628d360dbb5de4dc78feb5c653fc65bb98b29e18a05a7f559430c8373edb8ec2"
+    },
+    {
+      "path": "src/main/resources/db/sqlite/V7__case_recovery.sql",
+      "bytes": 350,
+      "sha256": "9eb891eec1511dd0e619dcaf8732d5d885a463b4957c3b2b083493a0591b3798"
+    },
+    {
+      "path": "src/main/resources/db/sqlite/V8__platform_catalog.sql",
+      "bytes": 532,
+      "sha256": "dfa3965a23eaac424665c96a47215859f4d5d21b1fe12a28aa16f8b0411c5644"
+    },
+    {
+      "path": "src/main/resources/db/sqlite/V9__chat_inspection.sql",
+      "bytes": 145,
+      "sha256": "4b1845f223d7642ef6b5a68110b64d5e148f3af90fd546a209ad87b156b3c879"
+    },
+    {
+      "path": "src/main/resources/static/app.css",
+      "bytes": 23674,
+      "sha256": "a5099a1cbbc7ec5e8d6f2e99e91bffc10a8a8f6f2049ffba1eb9348643502ba2"
+    },
+    {
+      "path": "src/main/resources/static/app.js",
+      "bytes": 73535,
+      "sha256": "c354b43bb1c0889f6afc20ab0fbe825469d78ad26dcddd4d9872de3e99fdef70"
+    },
+    {
+      "path": "src/main/resources/static/favicon.svg",
+      "bytes": 241,
+      "sha256": "c895e8083bbbf716123d67169d46eeb437467b6e87198f726cf6adc61a63ff90"
+    },
+    {
+      "path": "src/main/resources/static/index.html",
+      "bytes": 24718,
+      "sha256": "08a67bc607ac4a339eed13fcc66a3da1d788782eb8fee121ec596eaae435e7ba"
+    },
+    {
+      "path": "src/main/resources/static/markdown.js",
+      "bytes": 2378,
+      "sha256": "aba2ee25e5512e0e62c36f49bf1d50cf3849e4e95bf91d71dc8b836a4ce88f2a"
+    },
+    {
+      "path": "src/main/resources/static/vendor/README.md",
+      "bytes": 789,
+      "sha256": "af1eb7ee9e6d1a43d7492ef52fa32b0bccc4b2171fe1c35f95d7842515123918"
+    },
+    {
+      "path": "src/main/resources/static/vendor/dompurify.LICENSE",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "src/main/resources/static/vendor/marked.LICENSE",
+      "bytes": 2942,
+      "sha256": "8e3a3f82f59a60958f56ca08f445647c32a4733dc7ca6c2c46f6eb898471ab9c"
+    },
+    {
+      "path": "src/main/resources/static/vendor/marked.umd.js",
+      "bytes": 51388,
+      "sha256": "392f4df89533b50f1dadff3f6dc0952350bd39c9f17def50a0374ef47d6147ef"
+    },
+    {
+      "path": "src/main/resources/static/vendor/purify.min.js",
+      "bytes": 29828,
+      "sha256": "cd37898f9782adf54820c413191b5691803f0f137c799d6edcfd38523b4c2c31"
+    },
+    {
+      "path": "src/test/java/com/lanhao/ops/AgentPropertiesTest.java",
+      "bytes": 2180,
+      "sha256": "682f6af01dc5de5789b1c73156c9bed8c91097b456298a5947b37a77edf2bca1"
+    },
+    {
+      "path": "src/test/java/com/lanhao/ops/AiNarratorTest.java",
+      "bytes": 2367,
+      "sha256": "8af2bc3ddf1855092cf89eb78847c047ecb0e2daf5b538f9edc0dd05b73be0e1"
+    },
+    {
+      "path": "src/test/java/com/lanhao/ops/ApplicationContextTest.java",
+      "bytes": 3783,
+      "sha256": "175c71bed92c812f27a861a1cf06f0012fa68bd79c53f42ec3b9de6cb451766d"
+    },
+    {
+      "path": "src/test/java/com/lanhao/ops/BoundedProcessTest.java",
+      "bytes": 2702,
+      "sha256": "a00c4e59b32de8d1484992c9b669e20d245f007929a5513d840236a99b7d7ed7"
+    },
+    {
+      "path": "src/test/java/com/lanhao/ops/CommandPlannerTest.java",
+      "bytes": 2267,
+      "sha256": "d8d3286f03e19abf35a48583967ebfa4ca1a34b97bd96aed942be3050da6d9dd"
+    },
+    {
+      "path": "src/test/java/com/lanhao/ops/CommandSafetyTest.java",
+      "bytes": 3166,
+      "sha256": "fff25932434529de58aa868789d8e9fe4baabdbfc1adc5a86d60899496636f1c"
+    },
+    {
+      "path": "src/test/java/com/lanhao/ops/CommandScopeResolverTest.java",
+      "bytes": 3868,
+      "sha256": "b50c3ecd0b059bac3c6c9d202575db4645980edc69dd253884f728c2a5995372"
+    },
+    {
+      "path": "src/test/java/com/lanhao/ops/CommandWorkflowTest.java",
+      "bytes": 3633,
+      "sha256": "ef5865ccf8476dbabd49628680abebddf3680636b9658a8149a9513a90982582"
+    },
+    {
+      "path": "src/test/java/com/lanhao/ops/DeploymentIdentityTest.java",
+      "bytes": 2946,
+      "sha256": "486aea3a19a64c90c7b181f0ff7ba48fb75d79bee7d61356b2d0444cf8d33711"
+    },
+    {
+      "path": "src/test/java/com/lanhao/ops/DiagnosisGraphTest.java",
+      "bytes": 4673,
+      "sha256": "f70f7b779c60a04e5c9d9c36a2be128b92f5997c5b30fcf4c042ed4119727e1f"
+    },
+    {
+      "path": "src/test/java/com/lanhao/ops/JdbcRunStoreTest.java",
+      "bytes": 4594,
+      "sha256": "229dd98af2ffb4bca2157a7f53d4216c876ebaa0ba608821a2dba17eccc79c2d"
+    },
+    {
+      "path": "src/test/java/com/lanhao/ops/KubectlIdentityTest.java",
+      "bytes": 2943,
+      "sha256": "1c7c585ef26ee14665ebe0478092f143838a38bde66a4748038863a02dc086a1"
+    },
+    {
+      "path": "src/test/java/com/lanhao/ops/KubernetesDeploymentPortTest.java",
+      "bytes": 15862,
+      "sha256": "34c244ea44eb1e9bedee7e19938cab1f1177e5598ade6fb6fc6e64a583fa584a"
+    },
+    {
+      "path": "src/test/java/com/lanhao/ops/MemoryMigrationTest.java",
+      "bytes": 2956,
+      "sha256": "d711b45342fbcdb8fc0be3752fffb0f646592782cc4ac44f4251e49fd3c95329"
+    },
+    {
+      "path": "src/test/java/com/lanhao/ops/OperationsPersistenceTest.java",
+      "bytes": 10263,
+      "sha256": "db0a6979921acdc71f2600d2f12872d0ed5a8e92d6045fa267602a47336a53f0"
+    },
+    {
+      "path": "src/test/java/com/lanhao/ops/OpsPropertiesTest.java",
+      "bytes": 1847,
+      "sha256": "edd8dc278980382dfd6985574542a658f98f310ef86e09be6a73abd28a22d76d"
+    },
+    {
+      "path": "src/test/java/com/lanhao/ops/RecoveryPolicyTest.java",
+      "bytes": 2207,
+      "sha256": "a81f628e0429211681d6ce0a488875c3213cbbb5a69d59855e0f86b7b797e239"
+    },
+    {
+      "path": "src/test/java/com/lanhao/ops/RunEngineTest.java",
+      "bytes": 11195,
+      "sha256": "515b4674b28b1296b489fd69d39b897d85f0f5eb4bf207bf1b8c217794afaaa0"
+    },
+    {
+      "path": "src/test/java/com/lanhao/ops/RunSchedulerTest.java",
+      "bytes": 4924,
+      "sha256": "1ef432ce2bb310ac5da7faa3c8aff21b181a32d6a5ab83b08250b64b7ce11272"
+    },
+    {
+      "path": "src/test/java/com/lanhao/ops/SqliteIntegrationTest.java",
+      "bytes": 25155,
+      "sha256": "9aa80d2faf2711ee4f23cee8627b4e1df9b355d2ef44e30033797bb85ce74e4a"
+    },
+    {
+      "path": "src/test/java/com/lanhao/ops/TestFixtures.java",
+      "bytes": 1304,
+      "sha256": "edf56c0a33f229c93d3831f0397584168c0924c2edba1540f1e292b67805ee35"
+    },
+    {
+      "path": "src/test/java/com/lanhao/ops/console/ChatInspectionFixture.java",
+      "bytes": 3840,
+      "sha256": "3aff01e324175032627c523566a7ad478d7d2772df5f9e4eba9a9040d4b18534"
+    },
+    {
+      "path": "src/test/java/com/lanhao/ops/console/ChatInspectionSafetyTest.java",
+      "bytes": 1405,
+      "sha256": "d0a2a71b0f5dd049042716a47cd37851d56484d34a887bae08619ff3ad037e6f"
+    },
+    {
+      "path": "src/test/java/com/lanhao/ops/console/ConsoleIntegrationTest.java",
+      "bytes": 23163,
+      "sha256": "e78efcf8a545f3641fda29a2a765f3262c4f1db9b39720e8392b362e9df89066"
+    },
+    {
+      "path": "src/test/java/com/lanhao/ops/console/DiscoveryContract.java",
+      "bytes": 74059,
+      "sha256": "0737a4a09916d8056a8618e8232ae83c78d03c6a36b52b8151af6d2fbe874faa"
+    },
+    {
+      "path": "src/test/java/com/lanhao/ops/console/DiscoveryGatewayTest.java",
+      "bytes": 5863,
+      "sha256": "d58a3697dac5ccb0f9c4397f24ddd79e63ead22ec0f4a9d8a9bfddfe21ff2a9a"
+    },
+    {
+      "path": "src/test/java/com/lanhao/ops/console/DiscoveryPostgresTest.java",
+      "bytes": 1237,
+      "sha256": "2a62a65e7c4d7b8e5bd33b82631faa71b6602fec6e8f91d34d60fd16e05cb542"
+    },
+    {
+      "path": "src/test/java/com/lanhao/ops/console/DiscoverySqliteTest.java",
+      "bytes": 830,
+      "sha256": "f839a8443774dec2ad34e8e95dc457e451129998a677ebb21097cc718853d03e"
+    },
+    {
+      "path": "src/test/java/com/lanhao/ops/console/KubeSphereGatewayTlsTest.java",
+      "bytes": 4315,
+      "sha256": "f3ec6a0a841bd58291237d2ab37e31dc7cddc9b407fa356472108dec2b215e83"
+    },
+    {
+      "path": "src/test/java/com/lanhao/ops/console/ModelGatewayTest.java",
+      "bytes": 5963,
+      "sha256": "7c66b58c6b45aeab7c3d318b6ac27c1f978e805dcc1b5ac2e42f7ea2e9c82b92"
+    },
+    {
+      "path": "src/test/java/com/lanhao/ops/console/PlatformCatalogGatewayTest.java",
+      "bytes": 9961,
+      "sha256": "02d90d6b76176dcd85ff2763e4184f11b37707ae456b1c737c35c0df941b7e8c"
+    },
+    {
+      "path": "src/test/java/com/lanhao/ops/console/ProvisioningContract.java",
+      "bytes": 24583,
+      "sha256": "6b052c478cd641a9e59cba27333969177ae840cb9cd9b16397cc839421494796"
+    },
+    {
+      "path": "src/test/java/com/lanhao/ops/console/ProvisioningGatewayTest.java",
+      "bytes": 3671,
+      "sha256": "bade53832ba82b4b96333b4db1a6eff56032c9a0bc9ed5ed08471b92023e2dfb"
+    },
+    {
+      "path": "src/test/java/com/lanhao/ops/console/ProvisioningPostgresTest.java",
+      "bytes": 1454,
+      "sha256": "8a4c700dce68c831c853ecab51bdb1cc7a21a021b4e6fa6748b1b99253cfa5b4"
+    },
+    {
+      "path": "src/test/java/com/lanhao/ops/console/ProvisioningSqliteTest.java",
+      "bytes": 1128,
+      "sha256": "30acaf1e36450ede79f198310c1543eefc85dc8e82640a9279497816e05845d5"
+    },
+    {
+      "path": "src/test/java/com/lanhao/ops/console/ReadOnlyEvidenceCollectorTest.java",
+      "bytes": 9380,
+      "sha256": "c82317b018f1030c8e601711a7670676865b1cd11f4a6d1880e08aa59e3fbca2"
+    },
+    {
+      "path": "src/test/java/com/lanhao/ops/console/ReadinessControllerTest.java",
+      "bytes": 2269,
+      "sha256": "fee5406a067cd36c61c03434104b10b29cba9b805b0db0c05cb9e95fe7917b21"
+    },
+    {
+      "path": "src/test/java/com/lanhao/ops/console/SecretCipherTest.java",
+      "bytes": 1295,
+      "sha256": "bad6dcd5f18364ad99750ced87eafc959b86f8ba34ad60cfb1e8af55b985bf68"
+    },
+    {
+      "path": "src/test/resources/contracts/tenant-catalog-entry.json",
+      "bytes": 489,
+      "sha256": "97cf5bc42628d850625a8a0a18e61371887842537ee8f681306105349a6f6434"
+    },
+    {
+      "path": "src/test/resources/tls/README.md",
+      "bytes": 409,
+      "sha256": "a73c988249d324df62b5576381a88ca61a06f8cb541bf758929fbf5885b376c6"
+    },
+    {
+      "path": "src/test/resources/tls/ca.pem",
+      "bytes": 1078,
+      "sha256": "a78354de00e2e56d3b4a07a599adcee14ab3cba292b5de49a15de239663b7fb5"
+    },
+    {
+      "path": "src/test/resources/tls/leaf.pem",
+      "bytes": 1066,
+      "sha256": "e64a360426f84f0124258b5a959b22a1620454a14e85da6749be625a3a0a564c"
+    },
+    {
+      "path": "src/test/resources/tls/server.p12",
+      "bytes": 3384,
+      "sha256": "e2ee20a3d32729a26e4a133af91c7317bb1a62abc8b098b664276bbf151dbe60"
+    },
+    {
+      "path": "src/test/resources/tls/wrong-ca.pem",
+      "bytes": 1090,
+      "sha256": "84284be9a3eaa624a8c8e21019bb6d2d8960a3e3ad0bcf9e730479f02d081793"
+    },
+    {
+      "path": "target/deployment-ops-agent-0.1.0-SNAPSHOT.jar",
+      "bytes": 83769412,
+      "sha256": "28e9b9277f9219ee9fe11a578425246a9054e5dc02bef0063d91a4bfa00905e3"
+    },
+    {
+      "path": "tests/ui/README.md",
+      "bytes": 632,
+      "sha256": "9a3bf79d50d16062d52fece9cac7a04f01f92e43912a319be6fc942dcae02be5"
+    },
+    {
+      "path": "tests/ui/markdown.test.cjs",
+      "bytes": 8456,
+      "sha256": "216f9a61224a345d466b76d6bdf79bbfba9329095f9e76c2607de7a6bf35024d"
+    },
+    {
+      "path": "tests/ui/package-lock.json",
+      "bytes": 13079,
+      "sha256": "2f0d573feb5df4ec6d46f13c81159ce2ac4a5c0f2ea6cb3fa304a521a2cdf8ea"
+    },
+    {
+      "path": "tests/ui/package.json",
+      "bytes": 193,
+      "sha256": "2fa5e64b94eb1bce37e780121a9a721cbeca5b3d197b9f8c86fb6b1a3fe5ccee"
+    },
+    {
+      "path": "tests/ui/provisioning.test.cjs",
+      "bytes": 4866,
+      "sha256": "fc5d364fafa7ab4a25e149b4bbb20b9850465a84892771975246fac9dcc9f3f2"
+    },
+    {
+      "path": "迁移说明.md",
+      "bytes": 3414,
+      "sha256": "555e129866a0094ae795ad5760aafeaf11e35af05d5a32515ffb1e27e7bfc0ce"
+    },
+    {
+      "path": "start-agent.cmd",
+      "bytes": 505,
+      "sha256": "13554ee680660a77820472b2428123eead21ebe41e0af54655ba110c0a292a98"
+    },
+    {
+      "path": "start-agent.sh",
+      "bytes": 464,
+      "sha256": "6529cc27008bb1653cd59eefe11fbbcbeae9e555729bbaea5d54c6a825b2e0af"
+    }
+  ]
+}

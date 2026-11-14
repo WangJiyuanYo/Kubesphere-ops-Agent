@@ -1,0 +1,33 @@
+name: Java 验证
+on: [push, pull_request]
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_USER: deployment_agent
+          POSTGRES_PASSWORD: test-only-password
+          POSTGRES_DB: agent_test
+        ports: ["5432:5432"]
+        options: --health-cmd pg_isready --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      TEST_DATABASE_URL: jdbc:postgresql://127.0.0.1:5432/agent_test
+      TEST_DATABASE_USER: deployment_agent
+      TEST_DATABASE_PASSWORD: test-only-password
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: tests/ui/package-lock.json
+      - run: npm --prefix tests/ui ci --ignore-scripts
+      - run: npm --prefix tests/ui test
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: maven
+      - run: mvn -s settings-central.xml -B -ntp verify

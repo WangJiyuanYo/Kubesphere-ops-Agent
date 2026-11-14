@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "eventId": "stage_100_7",
+  "platformInstanceId": "tenant-platform-test",
+  "workspaceId": "workspace-test",
+  "siteId": "10",
+  "provisioningId": "100",
+  "deploymentVersion": "provisioning-cycle-1",
+  "sequence": 7,
+  "phase": "PROJECT_PREPARE",
+  "state": "FAILED",
+  "provisioningStartedAt": "2026-11-13T00:00:00Z",
+  "phaseStartedAt": "2026-11-13T00:01:00Z",
+  "occurredAt": "2026-11-13T00:02:00Z",
+  "completedUnits": 0,
+  "errorCode": "PROJECT_CREATE_FAILED",
+  "summary": "项目准备步骤失败，请核验平台错误与依赖状态；尚未创建 CR。",
+  "dependencies": [
+    "ACCEPTED"
+  ],
+  "projectId": null,
+  "clusterApiUrl": null,
+  "namespace": null,
+  "resources": [],
+  "terminal": true
+}

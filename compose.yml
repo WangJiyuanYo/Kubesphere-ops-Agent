@@ -1,0 +1,18 @@
+services:
+  postgres:
+    image: postgres:17.6
+    environment:
+      POSTGRES_DB: deployment_agent
+      POSTGRES_USER: deployment_agent
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD:-demo-postgres-only}
+    ports:
+      - "127.0.0.1:55432:5432"
+    volumes:
+      - agent-postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U deployment_agent -d deployment_agent"]
+      interval: 5s
+      timeout: 3s
+      retries: 15
+volumes:
+  agent-postgres:

@@ -1,0 +1,10 @@
+# 需由管理员安装官方 kubectl，并挂载专用只读 kubeconfig；默认关闭。
+# 真实模式平台、验收目录与独立 API 密码仍须按 application-production.yml 配置。
+agent:
+  kubectl:
+    enabled: false
+    executable: /usr/local/bin/kubectl
+    kubeconfig: /etc/agent/readonly-kubeconfig
+    context: ops-readonly
+    timeout: 5s
+    max-commands: 3

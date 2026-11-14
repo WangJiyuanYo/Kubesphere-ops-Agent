@@ -1,0 +1,3 @@
+DROP INDEX agent_run_due;
+CREATE INDEX agent_run_due ON agent_run(due_at) WHERE state IN
+    ('MONITORING','DIAGNOSING','WAITING_APPROVAL','RETRY_WAIT','EXECUTING','VERIFYING');
